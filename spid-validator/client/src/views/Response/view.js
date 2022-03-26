@@ -29,7 +29,7 @@ function view(me) {
                     <div className="row alert alert-warning">
                         <b>Descrizione e risultato atteso</b><br/>
                         <p className="test-description">{me.state.description}</p>
-                        <form ref="form" action={me.state.response_destination} onSubmit={(e)=>{me.sendResponse(e)}} method="post" target="_blank">
+                        <form ref="form" action={me.state.response_destination} onSubmit={(e)=>{me.sendResponse(e)}} method="post">
                             <input type="hidden" name="RelayState" value={me.state.response_relayState} ></input>
                             <input type="hidden" name="SAMLResponse" value={me.state.response_samlResponse} ></input>                                                   
                             <input type="submit" value="Invia response al Service Provider" className="btn btn-send btn-success float-right" data-style="zoom-in"></input>
@@ -126,7 +126,7 @@ function view(me) {
                        
                             <div className="row">   
                                 <div className="col">      
-                                    <form ref="form" action={me.state.response_destination} onSubmit={(e)=>{me.sendResponse(e)}} method="post" target="_blank">
+                                    <form ref="form" action={me.state.response_destination} onSubmit={(e)=>{me.sendResponse(e)}} method="post">
                                         <input type="hidden" name="RelayState" value={me.state.response_relayState} ></input>
                                         <input type="hidden" name="SAMLResponse" value={me.state.response_samlResponse} ></input>                                                   
                                         <input type="submit" value="Invia response al Service Provider" className="btn btn-send btn-success float-right" data-style="zoom-in"></input>
